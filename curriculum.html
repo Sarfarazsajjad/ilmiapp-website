@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Ilmi's comprehensive curriculum covering K-12 Mathematics, STEM Sciences, Computer Science, and Standardized Exam Preparation.">
+  <title>Course Curriculum | Ilmi</title>
+  
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>">
+</head>
+<body>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">💡</div>
+        <span>Ilmi</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="methodology.html">Methodology</a></li>
+          <li><a href="curriculum.html" class="active">Curriculum</a></li>
+          <li><a href="user-guide.html">User Guide</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-primary">Get the App</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge">Comprehensive Learning Catalog</div>
+        <h1 class="hero-title">Explore the <span class="text-gradient">Ilmi</span> Curriculum</h1>
+        <p class="hero-subtitle">
+          Designed by top educators and aligned with international standards. From foundational arithmetic to advanced AP Physics and Computer Science, Ilmi has you covered.
+        </p>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs">
+          <button class="tab-btn active" data-filter="all">All Levels</button>
+          <button class="tab-btn" data-filter="elementary">Elementary (Grades 1-5)</button>
+          <button class="tab-btn" data-filter="middle">Middle School (Grades 6-8)</button>
+          <button class="tab-btn" data-filter="high">High School (Grades 9-12)</button>
+          <button class="tab-btn" data-filter="prep">Standardized Test Prep</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM GRID SECTION -->
+  <section class="section-padding" style="padding-top: 0;">
+    <div class="container">
+      <div class="grid-3" id="curriculumGrid">
+
+        <!-- 1. MATHEMATICS -->
+        <div class="glass-card curriculum-card" data-category="middle high">
+          <div class="subject-badge">Mathematics</div>
+          <h3>Algebra, Geometry & Calculus</h3>
+          <p>Master mathematical reasoning from core equations to differential calculus.</p>
+          <ul class="topic-list">
+            <li>Linear Equations & Inequalities</li>
+            <li>Polynomials & Factoring</li>
+            <li>Quadratic Functions & Graphs</li>
+            <li>Euclidean Geometry & Trigonometry</li>
+            <li>Limits, Derivatives & Integrals</li>
+            <li>Probability & Data Statistics</li>
+          </ul>
+        </div>
+
+        <!-- 2. PHYSICS -->
+        <div class="glass-card curriculum-card" data-category="high prep">
+          <div class="subject-badge">Natural Sciences</div>
+          <h3>Physics & Mechanics</h3>
+          <p>Understand the fundamental laws governing the universe through visual simulations.</p>
+          <ul class="topic-list">
+            <li>Kinematics & Newtonian Mechanics</li>
+            <li>Work, Energy & Momentum</li>
+            <li>Thermodynamics & Heat Transfer</li>
+            <li>Electricity & Magnetism</li>
+            <li>Waves, Sound & Light Optics</li>
+            <li>Introduction to Quantum Concepts</li>
+          </ul>
+        </div>
+
+        <!-- 3. CHEMISTRY -->
+        <div class="glass-card curriculum-card" data-category="middle high">
+          <div class="subject-badge">Natural Sciences</div>
+          <h3>General & Organic Chemistry</h3>
+          <p>Explore atomic structures, chemical bonds, and molecular reactions.</p>
+          <ul class="topic-list">
+            <li>Periodic Table & Atomic Theory</li>
+            <li>Chemical Bonding & Stoichiometry</li>
+            <li>States of Matter & Gas Laws</li>
+            <li>Acids, Bases & pH Calculations</li>
+            <li>Reaction Kinetics & Equilibrium</li>
+            <li>Basic Organic Chemistry Hydrocarbons</li>
+          </ul>
+        </div>
+
+        <!-- 4. BIOLOGY -->
+        <div class="glass-card curriculum-card" data-category="elementary middle high">
+          <div class="subject-badge">Life Sciences</div>
+          <h3>Biology & Life Systems</h3>
+          <p>Uncover the mysteries of living organisms, cells, genetics, and ecosystems.</p>
+          <ul class="topic-list">
+            <li>Cell Structure, Organelles & Membrane</li>
+            <li>Photosynthesis & Cellular Respiration</li>
+            <li>DNA, Genetics & Inheritance</li>
+            <li>Human Anatomy & Physiology</li>
+            <li>Evolution & Natural Selection</li>
+            <li>Ecology & Environmental Balance</li>
+          </ul>
+        </div>
+
+        <!-- 5. COMPUTER SCIENCE & AI -->
+        <div class="glass-card curriculum-card" data-category="middle high prep">
+          <div class="subject-badge">Technology & CS</div>
+          <h3>Computer Science & AI Literacy</h3>
+          <p>Learn computational thinking, algorithmic logic, and fundamental coding.</p>
+          <ul class="topic-list">
+            <li>Introduction to Python Programming</li>
+            <li>Data Structures: Lists, Dicts & Trees</li>
+            <li>Algorithmic Problem Solving</li>
+            <li>HTML, CSS & Web Fundamentals</li>
+            <li>Cybersecurity & Digital Citizenship</li>
+            <li>AI Fundamentals & Machine Learning Concepts</li>
+          </ul>
+        </div>
+
+        <!-- 6. ELEMENTARY STEM FOUNDATIONS -->
+        <div class="glass-card curriculum-card" data-category="elementary">
+          <div class="subject-badge">Foundations</div>
+          <h3>Elementary STEM Explorer</h3>
+          <p>Fun, interactive foundational topics for young learners in grades 1 through 5.</p>
+          <ul class="topic-list">
+            <li>Arithmetic: Addition to Long Division</li>
+            <li>Fractions, Decimals & Basic Shapes</li>
+            <li>Introduction to Earth Science & Weather</li>
+            <li>Plants, Animals & Habitats</li>
+            <li>Basic Logic Puzzles & Brain Teasers</li>
+            <li>Scientific Observation Skills</li>
+          </ul>
+        </div>
+
+        <!-- 7. STANDARDIZED EXAM PREP -->
+        <div class="glass-card curriculum-card" data-category="prep high">
+          <div class="subject-badge">Test Prep</div>
+          <h3>SAT, ACT & Competitive Prep</h3>
+          <p>Targeted flashcards and timed problem sets to boost standardized test scores.</p>
+          <ul class="topic-list">
+            <li>SAT / ACT Math Problem Solving</li>
+            <li>Reading Comprehension & Vocabulary</li>
+            <li>Grammar & Writing Sentence Mechanics</li>
+            <li>Science Data Analysis & Charts</li>
+            <li>Timed Practice Sprints & Speed Tricks</li>
+            <li>Score Analytics & Weak-Point Training</li>
+          </ul>
+        </div>
+
+        <!-- 8. LANGUAGES & HUMANITIES -->
+        <div class="glass-card curriculum-card" data-category="elementary middle high">
+          <div class="subject-badge">Humanities</div>
+          <h3>Languages & World History</h3>
+          <p>Develop critical reading, clear writing, and historical understanding.</p>
+          <ul class="topic-list">
+            <li>English Grammar & Vocabulary Building</li>
+            <li>Literary Analysis & Essay Writing</li>
+            <li>Ancient & Modern World History</li>
+            <li>Geography & Cultural Studies</li>
+            <li>Civics & Global Citizenship</li>
+            <li>Critical Thinking & Argumentation</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEARNING OUTCOMES BANNER -->
+  <section class="section-padding" style="background: rgba(17, 21, 40, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container" style="text-align: center;">
+      <div class="badge">Mastery Verification</div>
+      <h2>Every Course Includes Skill Trees & Diplomas</h2>
+      <p style="max-width: 700px; margin: 1rem auto 2.5rem auto;">
+        As students complete curriculum nodes, they unlock verifiable digital certificates and mastery skill trees that prove their academic progress.
+      </p>
+      <a href="index.html#download" class="btn btn-primary">Start Exploring Courses Free</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">💡</div>
+            <span>Ilmi</span>
+          </a>
+          <p>Empowering students worldwide with intelligent, adaptive learning tools built on cognitive science.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="user-guide.html">User Guide</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
+            <li><a href="user-guide.html#troubleshooting">Help & Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="mailto:support@ilmiapp.com">support@ilmiapp.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
+        <p>Built with ❤️ for curious minds everywhere.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
