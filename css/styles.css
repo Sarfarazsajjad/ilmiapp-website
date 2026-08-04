@@ -351,6 +351,12 @@ a {
   background: var(--grad-sun);
   border-radius: 4px;
 }
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
 
 .mobile-toggle {
   display: none;
@@ -940,4 +946,6 @@ a {
   .timeline-step { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .section-padding { padding: 3.5rem 0; }
+  .nav-mobile-cta { width: 100%; }
+  .nav-mobile-cta .btn { width: 100%; justify-content: center; }
 }
