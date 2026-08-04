@@ -1,9 +1,10 @@
 /* ==========================================================================
    ILMIAPP.COM - 100% BRIGHT, JOYFUL & NATURE SPLASH THEME
-   Directly matching the Official Ilmi App Splash Screen Palette
+   Official Supplementary Website for ILMI Android Mobile App
+   Directly matching the Official Splash Screen & Urdu Education Agenda
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   /* Splash Screen Primary Palette */
@@ -45,7 +46,7 @@
   --grad-wood: linear-gradient(180deg, #7c4d29 0%, #5c371b 100%);
   --grad-footer: linear-gradient(180deg, #e9f7df 0%, #d4efc7 100%);
 
-  /* Text Colors (High Contrast on Light BG) */
+  /* Text Colors */
   --text-main: #2c3e50;
   --text-muted: #4a607a;
   --text-dark: #1b2838;
@@ -53,6 +54,7 @@
   /* Fonts */
   --font-display: 'Fredoka', 'Nunito', cursive, sans-serif;
   --font-body: 'Nunito', 'Plus Jakarta Sans', sans-serif;
+  --font-urdu: 'Noto Nastaliq Urdu', system-ui, -apple-system, sans-serif;
 
   /* Radii & Shadows */
   --radius-sm: 14px;
@@ -104,17 +106,24 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
 }
 
-h1 { font-size: clamp(2.6rem, 5vw, 4rem); letter-spacing: -0.01em; }
-h2 { font-size: clamp(2.1rem, 3.6vw, 2.85rem); }
-h3 { font-size: clamp(1.4rem, 2.3vw, 1.8rem); }
-h4 { font-size: 1.3rem; }
+h1 { font-size: clamp(2.5rem, 4.8vw, 3.8rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
 
-p { color: var(--text-muted); font-size: 1.125rem; font-weight: 600; }
+p { color: var(--text-muted); font-size: 1.1rem; font-weight: 600; }
 
 a {
   color: inherit;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nastaliq-text {
+  font-family: var(--font-urdu);
+  direction: rtl;
+  display: inline-block;
+  line-height: 1.8;
 }
 
 .text-gradient {
@@ -137,7 +146,7 @@ a {
 }
 
 .section-padding {
-  padding: 5rem 0;
+  padding: 4.5rem 0;
 }
 
 .section-header {
@@ -148,7 +157,7 @@ a {
 
 .section-header p {
   margin-top: 0.85rem;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .badge {
@@ -158,7 +167,7 @@ a {
   padding: 0.55rem 1.4rem;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   background: var(--sun-yellow-light);
   border: 2px solid var(--sun-yellow);
@@ -185,7 +194,7 @@ a {
   background: var(--bg-card);
   border: 3px solid rgba(101, 179, 46, 0.2);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
+  padding: 2.25rem;
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
@@ -204,11 +213,11 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  padding: 1rem 2.25rem;
+  padding: 0.95rem 2rem;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   cursor: pointer;
   border: none;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -236,6 +245,17 @@ a {
   box-shadow: 0 10px 0px #2e6912, 0 18px 30px rgba(101, 179, 46, 0.45);
 }
 
+.btn-coral {
+  background: var(--grad-coral);
+  color: #ffffff;
+  box-shadow: 0 6px 0px #c0392b, 0 12px 25px rgba(255, 107, 74, 0.35);
+}
+
+.btn-coral:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0px #c0392b, 0 18px 30px rgba(255, 107, 74, 0.45);
+}
+
 /* ==========================================================================
    NAVIGATION BAR & WOODEN LOGO BADGE
    ========================================================================== */
@@ -260,7 +280,7 @@ a {
   justify-content: space-between;
 }
 
-/* WOODEN SIGN LOGO BADGE (Directly from Splash Screen) */
+/* WOODEN SIGN LOGO BADGE */
 .logo-wood {
   display: inline-flex;
   align-items: center;
@@ -268,7 +288,7 @@ a {
   background: var(--grad-wood);
   border: 3px solid #3d220f;
   border-radius: var(--radius-sm);
-  padding: 0.45rem 1.25rem;
+  padding: 0.4rem 1.1rem;
   box-shadow: var(--shadow-wood);
   font-family: var(--font-display);
   cursor: pointer;
@@ -281,39 +301,39 @@ a {
 
 .logo-text-english {
   display: flex;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-.logo-i1 { color: #ff6b4a; }  /* Fox Coral */
-.logo-l  { color: #00b4d8; }  /* Sky Blue */
-.logo-m  { color: #ff70a6; }  /* Lotus Pink */
-.logo-i2 { color: #ffc72c; }  /* Sun Yellow */
+.logo-i1 { color: #ff6b4a; }
+.logo-l  { color: #00b4d8; }
+.logo-m  { color: #ff70a6; }
+.logo-i2 { color: #ffc72c; }
 
 .logo-text-urdu {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
   margin-left: 0.4rem;
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-urdu);
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
 .nav-links a {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-muted);
   position: relative;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav-links a:hover,
@@ -327,9 +347,9 @@ a {
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 5px;
+  height: 4px;
   background: var(--grad-sun);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .mobile-toggle {
@@ -338,17 +358,17 @@ a {
   border: 2px solid #d97706;
   border-radius: var(--radius-sm);
   color: var(--wood-brown-text);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   cursor: pointer;
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 0.8rem;
   box-shadow: 0 3px 0 #b45309;
 }
 
 /* ==========================================================================
-   BRIGHT HERO SECTION
+   HERO SECTION
    ========================================================================== */
 .hero-section {
-  padding: 4.5rem 0 3.5rem 0;
+  padding: 4rem 0 3rem 0;
   background: var(--grad-sky);
   border-bottom: 3px solid rgba(101, 179, 46, 0.25);
   position: relative;
@@ -367,10 +387,10 @@ a {
 }
 
 .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   line-height: 1.7;
   color: #1e3a8a;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
   font-weight: 600;
 }
 
@@ -378,13 +398,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.35rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .hero-image-wrapper {
   position: relative;
-  max-width: 960px;
+  max-width: 950px;
   margin: 0 auto;
   text-align: center;
 }
@@ -410,20 +430,20 @@ a {
   background: #ffffff;
   border: 3px solid rgba(101, 179, 46, 0.25);
   border-radius: var(--radius-md);
-  padding: 2.25rem;
+  padding: 2rem;
   margin-top: 3.5rem;
   text-align: center;
   box-shadow: var(--shadow-soft);
 }
 
 .stat-item h3 {
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   color: var(--fox-coral);
   margin-bottom: 0.25rem;
 }
 
 .stat-item p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 800;
   color: var(--meadow-green-dark);
   text-transform: uppercase;
@@ -434,8 +454,8 @@ a {
    FEATURE CARDS
    ========================================================================== */
 .feature-icon {
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   border-radius: var(--radius-md);
   background: var(--meadow-green-light);
   border: 3px solid rgba(101, 179, 46, 0.35);
@@ -443,9 +463,112 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--meadow-green-dark);
-  font-size: 2rem;
-  margin-bottom: 1.35rem;
+  font-size: 1.85rem;
+  margin-bottom: 1.25rem;
   box-shadow: 0 8px 16px rgba(101, 179, 46, 0.15);
+}
+
+/* ==========================================================================
+   STANDARDS & ALIGNMENT TABLES
+   ========================================================================== */
+.standards-table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border: 3px solid rgba(101, 179, 46, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  margin-top: 2rem;
+}
+
+.standards-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 750px;
+}
+
+.standards-table th {
+  padding: 1rem 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  border-bottom: 3px solid var(--meadow-green);
+  background: var(--meadow-green-light);
+}
+
+.standards-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px dashed rgba(101, 179, 46, 0.2);
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.coverage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.coverage-full {
+  background: var(--meadow-green-light);
+  color: var(--meadow-green-dark);
+  border: 1px solid var(--meadow-green);
+}
+
+.coverage-partial {
+  background: var(--sun-yellow-light);
+  color: #995c00;
+  border: 1px solid var(--sun-yellow);
+}
+
+/* ==========================================================================
+   ENTERPRISE FORM STYLES
+   ========================================================================== */
+.enterprise-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  background: #ffffff;
+  border: 2px solid rgba(101, 179, 46, 0.3);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--meadow-green);
+  box-shadow: 0 0 15px rgba(101, 179, 46, 0.25);
 }
 
 /* ==========================================================================
@@ -475,7 +598,7 @@ a {
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: var(--wood-brown-text);
   box-shadow: 0 6px 18px rgba(255, 149, 0, 0.35);
@@ -485,33 +608,33 @@ a {
   background: #ffffff;
   border: 3px solid rgba(101, 179, 46, 0.2);
   border-radius: var(--radius-md);
-  padding: 2.25rem;
+  padding: 2rem;
   box-shadow: var(--shadow-soft);
 }
 
 /* ==========================================================================
-   CURRICULUM STYLES
+   CURRICULUM TABS & CARDS
    ========================================================================== */
 .filter-tabs {
   display: flex;
   justify-content: center;
-  gap: 0.85rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
   margin-bottom: 3rem;
 }
 
 .tab-btn {
-  padding: 0.85rem 1.85rem;
+  padding: 0.75rem 1.75rem;
   border-radius: var(--radius-full);
   background: #ffffff;
   border: 3px solid rgba(101, 179, 46, 0.25);
   color: var(--text-muted);
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
 
 .tab-btn:hover,
@@ -524,10 +647,10 @@ a {
 
 .subject-badge {
   display: inline-block;
-  padding: 0.4rem 1rem;
+  padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   background: var(--meadow-green-light);
   color: var(--meadow-green-dark);
@@ -541,7 +664,7 @@ a {
 }
 
 .topic-list li {
-  padding: 0.55rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px dashed rgba(101, 179, 46, 0.2);
   display: flex;
   align-items: center;
@@ -561,17 +684,17 @@ a {
    ========================================================================== */
 .guide-layout {
   display: grid;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 3rem;
 }
 
 .guide-sidebar {
   position: sticky;
-  top: 115px;
+  top: 110px;
   background: #ffffff;
   border: 3px solid rgba(101, 179, 46, 0.25);
   border-radius: var(--radius-md);
-  padding: 1.75rem;
+  padding: 1.5rem;
   height: fit-content;
   box-shadow: var(--shadow-soft);
 }
@@ -585,7 +708,7 @@ a {
 
 .guide-nav a {
   display: block;
-  padding: 0.85rem 1.1rem;
+  padding: 0.75rem 1rem;
   border-radius: var(--radius-sm);
   color: var(--text-muted);
   font-family: var(--font-display);
@@ -596,14 +719,14 @@ a {
 .guide-nav a.active {
   background: var(--meadow-green-light);
   color: var(--meadow-green-dark);
-  border-left: 5px solid var(--meadow-green);
+  border-left: 4px solid var(--meadow-green);
 }
 
 .guide-article {
   background: #ffffff;
   border: 3px solid rgba(101, 179, 46, 0.25);
   border-radius: var(--radius-md);
-  padding: 3.25rem;
+  padding: 3rem;
   box-shadow: var(--shadow-soft);
 }
 
@@ -611,8 +734,8 @@ a {
   background: var(--sun-yellow-light);
   border: 2px solid var(--sun-yellow);
   border-radius: var(--radius-sm);
-  padding: 1.35rem;
-  margin: 1.75rem 0;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -626,19 +749,19 @@ a {
    FAQ & SEARCH STYLES
    ========================================================================== */
 .search-box-wrapper {
-  max-width: 620px;
+  max-width: 600px;
   margin: 0 auto 3rem auto;
   position: relative;
 }
 
 .search-input {
   width: 100%;
-  padding: 1.15rem 1.5rem 1.15rem 3.75rem;
+  padding: 1.1rem 1.5rem 1.1rem 3.5rem;
   background: #ffffff;
   border: 3px solid var(--meadow-green);
   border-radius: var(--radius-full);
   color: var(--text-main);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-family: var(--font-body);
   font-weight: 600;
   outline: none;
@@ -648,22 +771,22 @@ a {
 
 .search-input:focus {
   border-color: var(--meadow-green-dark);
-  box-shadow: 0 0 25px rgba(101, 179, 46, 0.35);
+  box-shadow: 0 0 20px rgba(101, 179, 46, 0.35);
 }
 
 .search-icon {
   position: absolute;
-  left: 1.35rem;
+  left: 1.25rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--meadow-green-dark);
-  font-size: 1.45rem;
+  font-size: 1.35rem;
 }
 
 .accordion {
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
+  gap: 1.25rem;
 }
 
 .accordion-item {
@@ -677,7 +800,7 @@ a {
 
 .accordion-header {
   width: 100%;
-  padding: 1.6rem 2.25rem;
+  padding: 1.5rem 2rem;
   background: none;
   border: none;
   display: flex;
@@ -686,7 +809,7 @@ a {
   text-align: left;
   color: var(--text-dark);
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -696,8 +819,8 @@ a {
 }
 
 .accordion-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: var(--meadow-green-light);
   color: var(--meadow-green-dark);
@@ -705,7 +828,6 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.1rem;
   transition: transform 0.3s ease;
 }
 
@@ -719,11 +841,11 @@ a {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease, padding 0.35s ease;
-  padding: 0 2.25rem;
+  padding: 0 2rem;
 }
 
 .accordion-item.active .accordion-content {
-  padding: 0 2.25rem 1.75rem 2.25rem;
+  padding: 0 2rem 1.5rem 2rem;
 }
 
 /* ==========================================================================
@@ -745,7 +867,7 @@ a {
 }
 
 .footer-brand p {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   max-width: 340px;
   font-size: 1.05rem;
   color: #3b5230;
@@ -754,7 +876,7 @@ a {
 
 .footer-col h4 {
   font-size: 1.25rem;
-  margin-bottom: 1.35rem;
+  margin-bottom: 1.25rem;
   color: var(--meadow-green-dark);
   font-family: var(--font-display);
 }
@@ -763,7 +885,7 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.8rem;
 }
 
 .footer-col a {
@@ -790,12 +912,11 @@ a {
   gap: 1rem;
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
+/* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 1024px) {
   .guide-layout { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .enterprise-form { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -808,7 +929,7 @@ a {
     border-bottom: 4px solid var(--meadow-green);
     flex-direction: column;
     padding: 2rem;
-    gap: 1.5rem;
+    gap: 1.25rem;
     transform: translateY(-150%);
     transition: transform 0.35s ease;
     box-shadow: 0 15px 35px rgba(101, 179, 46, 0.2);
