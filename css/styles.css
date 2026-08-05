@@ -327,6 +327,9 @@ a {
   list-style: none;
 }
 
+.nav-mobile-cta { display: none; }
+.nav-desktop-cta { display: inline-flex; }
+
 .nav-links a {
   font-family: var(--font-display);
   font-weight: 700;
@@ -946,6 +949,7 @@ a {
   .timeline-step { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .section-padding { padding: 3.5rem 0; }
-  .nav-mobile-cta { width: 100%; }
+  .nav-mobile-cta { display: block; width: 100%; text-align: center; }
   .nav-mobile-cta .btn { width: 100%; justify-content: center; }
+  .nav-desktop-cta { display: none; }
 }
