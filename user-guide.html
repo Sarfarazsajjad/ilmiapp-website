@@ -1,202 +1,330 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ILMI Android App User Guide & Manual - Step-by-step instructions for installing the app, offline unit downloads, profile creation, parent dashboards, and Nastaliq tracing.">
-  <title>User Guide & Android App Manual | ILMI</title>
-  
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ILMI Android App User Guide & Manual - Step-by-step instructions for installing the app, offline unit downloads, profile creation, parent dashboards, and Nastaliq tracing."
+    />
+    <title>User Guide & Android App Manual | ILMI</title>
 
-  <!-- NAVIGATION HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo-wood" aria-label="ILMI Home">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION HEADER -->
+    <header class="header">
+      <div class="container nav-container">
         <div class="logo-text-english">
-          <span class="logo-i1">i</span><span class="logo-l">l</span><span class="logo-m">m</span><span class="logo-i2">i</span>
-        </div>
-        <div class="logo-text-urdu">علمی</div>
-      </a>
-
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li><a href="curriculum.html">Curriculum</a></li>
-          <li><a href="enterprise.html">Enterprise</a></li>
-          <li><a href="user-guide.html" class="active">User Guide</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="index.html#download" class="btn btn-primary">Get the App 🚀</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <div class="badge">Official Android App Manual</div>
-        <h1 class="hero-title"><span class="text-gradient">ILMI</span> Android App User Guide</h1>
-        <p class="hero-subtitle">
-          Everything parents, teachers, and students need to know to install, navigate, and optimize learning on the ILMI Android App.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN GUIDE SECTION WITH SIDEBAR -->
-  <section class="section-padding" style="padding-top: 0;">
-    <div class="container">
-      <div class="guide-layout">
-        
-        <!-- SIDEBAR NAVIGATION -->
-        <aside class="guide-sidebar">
-          <h4 style="margin-bottom: 1rem; color: var(--wood-brown-dark);">Guide Directory</h4>
-          <ul class="guide-nav">
-            <li><a href="#getting-started" class="active">1. Android App Setup 📱</a></li>
-            <li><a href="#offline-mode">2. Offline Mode & Remote Use 📡</a></li>
-            <li><a href="#daily-routine">3. Daily 15-Min Learning Path 🌟</a></li>
-            <li><a href="#parent-guide">4. Parent & Teacher Dashboards 📊</a></li>
-            <li><a href="#tracing-tips">5. Nastaliq Tracing Tips ✍️</a></li>
-          </ul>
-        </aside>
-
-        <!-- CONTENT PANELS -->
-        <main class="guide-content">
-          
-          <!-- ARTICLE 1: GETTING STARTED -->
-          <article class="guide-article" id="getting-started">
-            <h2>1. Installing the ILMI Android App</h2>
-            <p>The official ILMI mobile application is ready for launch on Android devices (smartphones & tablets). Follow these setup steps:</p>
-            
-            <h3>Step 1: Download from Google Play Store</h3>
-            <p>Open Google Play Store on your Android device (Android OS 8.0+ supported), search for <strong>ILMI Urdu Learning App</strong>, and tap Install.</p>
-
-            <h3>Step 2: Profile Creation</h3>
-            <p>Select your user type (Student, Parent, or School Educator). Select your child's age group or class level (Nursery, Pre-K, KG, or Class 1).</p>
-
-            <h3>Step 3: Audio & Voice Setup</h3>
-            <p>Ensure your device volume is turned up to enjoy crisp audio pronunciations, phonics guidance, and character voiceovers.</p>
-
-            <div class="tip-box">
-              <span style="font-size: 1.5rem;">💡</span>
-              <div>
-                <strong>Family Account Tip:</strong> Parents can link up to 4 child profiles under one account to manage streaks and progress reports separately!
-              </div>
-            </div>
-          </article>
-
-          <!-- ARTICLE 2: OFFLINE MODE -->
-          <article class="guide-article" id="offline-mode" style="display: none;">
-            <h2>2. Offline Mode for Remote & Community Use</h2>
-            <p>ILMI is built to serve children in distant and remote communities where Wi-Fi or cellular internet access is limited.</p>
-
-            <h3>How Offline Pre-Loading Works</h3>
-            <ol style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8;">
-              <li>Open the app while connected to Wi-Fi.</li>
-              <li>Navigate to <strong>Settings ➔ Offline Content Manager</strong>.</li>
-              <li>Tap <strong>"Download Full Level"</strong> to pre-load all activities, audio files, and story animations.</li>
-              <li>Children can now practice completely offline! Learning metrics auto-sync when a connection is restored.</li>
-            </ol>
-          </article>
-
-          <!-- ARTICLE 3: DAILY ROUTINE -->
-          <article class="guide-article" id="daily-routine" style="display: none;">
-            <h2>3. The 15-Minute Daily Learning Path</h2>
-            <p>Lessons are organized as doorways and steps along a colorful learning path map:</p>
-            <ul class="topic-list">
-              <li><strong>Step 1 (Warm-Up):</strong> 3-minute quick review of previous letters.</li>
-              <li><strong>Step 2 (Phonics & Tracing):</strong> Interactive Nastaliq letter tracing (<span class="nastaliq-text">حروف ٹریسنگ</span>).</li>
-              <li><strong>Step 3 (Drag-and-Blend):</strong> CVC word building with audio voiceover.</li>
-              <li><strong>Step 4 (Story & Quiz):</strong> Animated storybook reading with touchable answer bubbles.</li>
-            </ul>
-          </article>
-
-          <!-- ARTICLE 4: PARENT & TEACHER DASHBOARDS -->
-          <article class="guide-article" id="parent-guide" style="display: none;">
-            <h2>4. Parent & Teacher Progress Dashboards</h2>
-            <p>Monitor child accuracy, time spent, auto-saved writing portfolios, and grade-level benchmark assessments.</p>
-            <p style="margin-top: 1rem;">Educators can access class-wide reports to identify students who need extra support on specific letter sounds or ligatures.</p>
-          </article>
-
-          <!-- ARTICLE 5: NASTALIQ TRACING TIPS -->
-          <article class="guide-article" id="tracing-tips" style="display: none;">
-            <h2>5. Nastaliq Penmanship Tracing Tips</h2>
-            <p>For best results during letter tracing activities:</p>
-            <ul class="topic-list">
-              <li>Use a stylus or clean index finger to follow guided direction arrows.</li>
-              <li>Ensure strokes start from top-to-bottom and right-to-left as indicated on screen.</li>
-              <li>Complete all dot placements (<span class="nastaliq-text">نقطے</span>) to unlock star completion bonuses!</li>
-            </ul>
-          </article>
-
-        </main>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-wood">
-            <div class="logo-text-english">
-              <span class="logo-i1">i</span><span class="logo-l">l</span><span class="logo-m">m</span><span class="logo-i2">i</span>
-            </div>
-            <div class="logo-text-urdu">علمی</div>
-          </a>
-          <p>Empowering children worldwide with joyful, adaptive learning tools built on cognitive science.</p>
+          <img
+            src="assets/ilmi_logo.svg"
+            alt="ILMI Urdu Learning App Banner"
+            class="logo-i2"
+            width="120"
+            height="120"
+          />
         </div>
 
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
+        <nav>
+          <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="methodology.html">Methodology</a></li>
             <li><a href="curriculum.html">Curriculum</a></li>
             <li><a href="enterprise.html">Enterprise</a></li>
-            <li><a href="user-guide.html">User Guide</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
+            <li><a href="user-guide.html" class="active">User Guide</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
-            <li><a href="user-guide.html#troubleshooting">Help & Support</a></li>
+            <li class="nav-mobile-cta">
+              <a href="index.html#download" class="btn btn-primary"
+                >Get the App 🚀</a
+              >
+            </li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="#">Twitter / X</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="mailto:support@ilmiapp.com">support@ilmiapp.com</a></li>
-          </ul>
+        <div class="nav-actions">
+          <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            aria-label="Toggle Navigation"
+          >
+            ☰
+          </button>
         </div>
       </div>
+    </header>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
-        <p>Built with ❤️ for curious minds everywhere.</p>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge">Official Android App Manual</div>
+          <h1 class="hero-title">
+            <span class="text-gradient">ILMI</span> Android App User Guide
+          </h1>
+          <p class="hero-subtitle">
+            Everything parents, teachers, and students need to know to install,
+            navigate, and optimize learning on the ILMI Android App.
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- MAIN GUIDE SECTION WITH SIDEBAR -->
+    <section class="section-padding" style="padding-top: 0">
+      <div class="container">
+        <div class="guide-layout">
+          <!-- SIDEBAR NAVIGATION -->
+          <aside class="guide-sidebar">
+            <h4 style="margin-bottom: 1rem; color: var(--wood-brown-dark)">
+              Guide Directory
+            </h4>
+            <ul class="guide-nav">
+              <li>
+                <a href="#getting-started" class="active"
+                  >1. Android App Setup 📱</a
+                >
+              </li>
+              <li>
+                <a href="#offline-mode">2. Offline Mode & Remote Use 📡</a>
+              </li>
+              <li>
+                <a href="#daily-routine">3. Daily 15-Min Learning Path 🌟</a>
+              </li>
+              <li>
+                <a href="#parent-guide">4. Parent & Teacher Dashboards 📊</a>
+              </li>
+              <li><a href="#tracing-tips">5. Nastaliq Tracing Tips ✍️</a></li>
+            </ul>
+          </aside>
+
+          <!-- CONTENT PANELS -->
+          <main class="guide-content">
+            <!-- ARTICLE 1: GETTING STARTED -->
+            <article class="guide-article" id="getting-started">
+              <h2>1. Installing the ILMI Android App</h2>
+              <p>
+                The official ILMI mobile application is ready for launch on
+                Android devices (smartphones & tablets). Follow these setup
+                steps:
+              </p>
+
+              <h3>Step 1: Download from Google Play Store</h3>
+              <p>
+                Open Google Play Store on your Android device (Android OS 8.0+
+                supported), search for <strong>ILMI Urdu Learning App</strong>,
+                and tap Install.
+              </p>
+
+              <h3>Step 2: Profile Creation</h3>
+              <p>
+                Select your user type (Student, Parent, or School Educator).
+                Select your child's age group or class level (Nursery, Pre-K,
+                KG, or Class 1).
+              </p>
+
+              <h3>Step 3: Audio & Voice Setup</h3>
+              <p>
+                Ensure your device volume is turned up to enjoy crisp audio
+                pronunciations, phonics guidance, and character voiceovers.
+              </p>
+
+              <div class="tip-box">
+                <span style="font-size: 1.5rem">💡</span>
+                <div>
+                  <strong>Family Account Tip:</strong> Parents can link up to 4
+                  child profiles under one account to manage streaks and
+                  progress reports separately!
+                </div>
+              </div>
+            </article>
+
+            <!-- ARTICLE 2: OFFLINE MODE -->
+            <article
+              class="guide-article"
+              id="offline-mode"
+              style="display: none"
+            >
+              <h2>2. Offline Mode for Remote & Community Use</h2>
+              <p>
+                ILMI is built to serve children in distant and remote
+                communities where Wi-Fi or cellular internet access is limited.
+              </p>
+
+              <h3>How Offline Pre-Loading Works</h3>
+              <ol
+                style="
+                  margin-left: 1.5rem;
+                  color: var(--text-muted);
+                  line-height: 1.8;
+                "
+              >
+                <li>Open the app while connected to Wi-Fi.</li>
+                <li>
+                  Navigate to
+                  <strong>Settings ➔ Offline Content Manager</strong>.
+                </li>
+                <li>
+                  Tap <strong>"Download Full Level"</strong> to pre-load all
+                  activities, audio files, and story animations.
+                </li>
+                <li>
+                  Children can now practice completely offline! Learning metrics
+                  auto-sync when a connection is restored.
+                </li>
+              </ol>
+            </article>
+
+            <!-- ARTICLE 3: DAILY ROUTINE -->
+            <article
+              class="guide-article"
+              id="daily-routine"
+              style="display: none"
+            >
+              <h2>3. The 15-Minute Daily Learning Path</h2>
+              <p>
+                Lessons are organized as doorways and steps along a colorful
+                learning path map:
+              </p>
+              <ul class="topic-list">
+                <li>
+                  <strong>Step 1 (Warm-Up):</strong> 3-minute quick review of
+                  previous letters.
+                </li>
+                <li>
+                  <strong>Step 2 (Phonics & Tracing):</strong> Interactive
+                  Nastaliq letter tracing (<span class="nastaliq-text"
+                    >حروف ٹریسنگ</span
+                  >).
+                </li>
+                <li>
+                  <strong>Step 3 (Drag-and-Blend):</strong> CVC word building
+                  with audio voiceover.
+                </li>
+                <li>
+                  <strong>Step 4 (Story & Quiz):</strong> Animated storybook
+                  reading with touchable answer bubbles.
+                </li>
+              </ul>
+            </article>
+
+            <!-- ARTICLE 4: PARENT & TEACHER DASHBOARDS -->
+            <article
+              class="guide-article"
+              id="parent-guide"
+              style="display: none"
+            >
+              <h2>4. Parent & Teacher Progress Dashboards</h2>
+              <p>
+                Monitor child accuracy, time spent, auto-saved writing
+                portfolios, and grade-level benchmark assessments.
+              </p>
+              <p style="margin-top: 1rem">
+                Educators can access class-wide reports to identify students who
+                need extra support on specific letter sounds or ligatures.
+              </p>
+            </article>
+
+            <!-- ARTICLE 5: NASTALIQ TRACING TIPS -->
+            <article
+              class="guide-article"
+              id="tracing-tips"
+              style="display: none"
+            >
+              <h2>5. Nastaliq Penmanship Tracing Tips</h2>
+              <p>For best results during letter tracing activities:</p>
+              <ul class="topic-list">
+                <li>
+                  Use a stylus or clean index finger to follow guided direction
+                  arrows.
+                </li>
+                <li>
+                  Ensure strokes start from top-to-bottom and right-to-left as
+                  indicated on screen.
+                </li>
+                <li>
+                  Complete all dot placements (<span class="nastaliq-text"
+                    >نقطے</span
+                  >) to unlock star completion bonuses!
+                </li>
+              </ul>
+            </article>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-wood">
+              <div class="logo-text-english">
+                <img
+                  src="assets/ilmi_logo.svg"
+                  alt="ILMI Urdu Learning App Banner"
+                  class="logo-i2"
+                  width="120"
+                  height="120"
+                />
+              </div>
+            </a>
+            <p>
+              Empowering children worldwide with joyful, adaptive mother-tongue
+              learning tools built on cognitive science.
+            </p>
+          </div>
+          z
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="curriculum.html">Curriculum</a></li>
+              <li><a href="enterprise.html">Enterprise</a></li>
+              <li><a href="user-guide.html">User Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
+              <li>
+                <a href="user-guide.html#troubleshooting">Help & Support</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Twitter / X</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li>
+                <a href="mailto:support@ilmiapp.com">support@ilmiapp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
+          <p>Built with ❤️ for curious minds everywhere.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
