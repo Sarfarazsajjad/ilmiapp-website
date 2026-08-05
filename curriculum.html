@@ -1,293 +1,953 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ILMI Curriculum & Standards Alignment - Single National Curriculum (SNC ECCE to Class 1) and Common Core State Standards (CCSS ULA) alignment for Urdu foundational reading, phonics, Nastaliq writing, and grammar.">
-  <title>Curriculum & Standards Alignment (SNC & CCSS) | ILMI</title>
-  
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ILMI Curriculum & Standards Alignment - Single National Curriculum (SNC ECCE to Class 1) and Common Core State Standards (CCSS ULA) alignment for Urdu foundational reading, phonics, Nastaliq writing, and grammar."
+    />
+    <title>Curriculum & Standards Alignment (SNC & CCSS) | ILMI</title>
 
-  <!-- NAVIGATION HEADER -->
-  <header class="header">
-    <div class="container nav-container">
-      <a href="index.html" class="logo-wood" aria-label="ILMI Home">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION HEADER -->
+    <header class="header">
+      <div class="container nav-container">
         <div class="logo-text-english">
-          <span class="logo-i1">i</span><span class="logo-l">l</span><span class="logo-m">m</span><span class="logo-i2">i</span>
-        </div>
-        <div class="logo-text-urdu">علمی</div>
-      </a>
-
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="methodology.html">Methodology</a></li>
-          <li><a href="curriculum.html" class="active">Curriculum</a></li>
-          <li><a href="enterprise.html">Enterprise</a></li>
-          <li><a href="user-guide.html">User Guide</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="index.html#download" class="btn btn-primary">Get the App 🚀</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">☰</button>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <div class="badge">SNC & CCSS Standards Alignment</div>
-        <h1 class="hero-title">Urdu Curriculum & <span class="text-gradient">Standards</span> Alignment</h1>
-        <p class="hero-subtitle">
-          Demonstrating full coverage of Pakistan's Single National Curriculum (SNC ECCE – Class 1) and parallel Common Core State Standards (CCSS ULA) for early reading, phonics, writing, and language.
-        </p>
-
-        <!-- FILTER TABS -->
-        <div class="filter-tabs">
-          <button class="tab-btn active" data-filter="all">All Domains 🌟</button>
-          <button class="tab-btn" data-filter="reading">Foundational Reading 📖</button>
-          <button class="tab-btn" data-filter="comprehension">Comprehension & Vocabulary 💡</button>
-          <button class="tab-btn" data-filter="writing">Nastaliq Writing ✍️</button>
-          <button class="tab-btn" data-filter="speaking">Speaking & Listening 🎙️</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- URDU ALPHABET PROGRESSION LEVELS (Doc 3) -->
-  <section class="section-padding" style="padding-top: 0;">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge">Categorized Letter Progression</div>
-        <h2>Categorized Urdu Alphabet Levels (حروف تہجی)</h2>
-        <p>Divided into 4 progressive segments based on complexity of shape, stroke order, curves, and dot identification.</p>
-      </div>
-
-      <div class="grid-3">
-        <!-- LEVEL 1 -->
-        <div class="glass-card curriculum-card" data-category="reading writing">
-          <div class="subject-badge">Level 1: Simple Shapes</div>
-          <h3 class="nastaliq-text">ا، آ، ب، پ، ت</h3>
-          <p style="margin-top: 0.5rem;">Visually simple, frequently used letters that are easy to recognize, trace, and write.</p>
-          <ul class="topic-list">
-            <li>Letter Recognition: <span class="nastaliq-text">ا، ب</span></li>
-            <li>Phonic sound: <span class="nastaliq-text">ب = بکری، ت = تتلی</span></li>
-            <li>Object tracing & stroke guides</li>
-            <li>Sight words: <span class="nastaliq-text">انار، انڈا، اونٹ</span></li>
-          </ul>
+          <img
+            src="assets/ilmi_logo.svg"
+            alt="ILMI Urdu Learning App Banner"
+            class="logo-i2"
+            width="120"
+            height="120"
+          />
         </div>
 
-        <!-- LEVEL 2 -->
-        <div class="glass-card curriculum-card" data-category="reading writing">
-          <div class="subject-badge">Level 2: Moderate Curves</div>
-          <h3 class="nastaliq-text">ح، خ، د، ڈ، ذ، ر، س</h3>
-          <p style="margin-top: 0.5rem;">Introducing moderate curve shapes, dots recognition, and 3-letter word formations.</p>
-          <ul class="topic-list">
-            <li>Letter Recognition: <span class="nastaliq-text">د، ر، س</span></li>
-            <li>Phonic sound: <span class="nastaliq-text">ح = حوض، خ = خربوزہ</span></li>
-            <li>Drag-and-blend CVC word builder</li>
-            <li>Vocabulary: <span class="nastaliq-text">درخت، رکشہ، سیب</span></li>
-          </ul>
-        </div>
-
-        <!-- LEVEL 3 -->
-        <div class="glass-card curriculum-card" data-category="reading writing">
-          <div class="subject-badge">Level 3: Loops & Dots</div>
-          <h3 class="nastaliq-text">ش، ص، ض، ط، ظ، ع، غ، ف، ق، ک، گ</h3>
-          <p style="margin-top: 0.5rem;">Focus on loops, multi-dot distinctions, ligatures, and sentence building.</p>
-          <ul class="topic-list">
-            <li>Letter Differentiation: <span class="nastaliq-text">ش/ص، ط/ظ</span></li>
-            <li>Ligatures & joined forms</li>
-            <li>Sentence builder with timed read</li>
-            <li>Vocabulary: <span class="nastaliq-text">عینک، غبارہ، قلم</span></li>
-          </ul>
-        </div>
-
-        <!-- LEVEL 4 -->
-        <div class="glass-card curriculum-card" data-category="reading writing">
-          <div class="subject-badge">Level 4: Complex Ligatures</div>
-          <h3 class="nastaliq-text">ل، م، ن، و، ہ، ی</h3>
-          <p style="margin-top: 0.5rem;">Advanced letter joining, complex Nastaliq alignment, and story comprehension.</p>
-          <ul class="topic-list">
-            <li>Complex letter joining & tail strokes</li>
-            <li>Interactive story reading & questions</li>
-            <li>Polite expressions: <span class="nastaliq-text">سلام، شکریہ</span></li>
-            <li>Advanced vocabulary & postpositions</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STANDARDS ALIGNMENT MATRIX TABLE (Doc 2) -->
-  <section class="section-padding" style="background: #ffffff; border-top: 3px solid rgba(101, 179, 46, 0.2); border-bottom: 3px solid rgba(101, 179, 46, 0.2);">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge">Official Alignment Matrix</div>
-        <h2>SNC (ECCE – Class 1) & CCSS Standard Mapping</h2>
-        <p>Complete coverage audit demonstrating curriculum compliance across all early learning domains.</p>
-      </div>
-
-      <div class="standards-table-wrapper">
-        <table class="standards-table">
-          <thead>
-            <tr>
-              <th>ID & Grade</th>
-              <th>Urdu SLO (Single National Curriculum)</th>
-              <th>CCSS Standard</th>
-              <th>Coverage</th>
-              <th>In-App Activity</th>
-              <th>Assessment Evidence</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>UR-1 (KG)</strong></td>
-              <td>Hold book correctly; follow words R➔L & top➔bottom</td>
-              <td>RF.K.1 (A,B)</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Interactive animated story mode with direction arrows</td>
-              <td>Tap-to-highlight comprehension check</td>
-            </tr>
-            <tr>
-              <td><strong>UR-2 (KG)</strong></td>
-              <td>Recognize & name Urdu letters (<span class="nastaliq-text">ا–ی</span>)</td>
-              <td>RF.K.1.D</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Letter trace games & audio name identification</td>
-              <td>Letter ID quiz (≥ 80% accuracy)</td>
-            </tr>
-            <tr>
-              <td><strong>UR-3 (KG)</strong></td>
-              <td>Identify rhyming words</td>
-              <td>RF.K.2.A</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Rhyme-match bubble popper mini-games</td>
-              <td>Rhyme pairs accuracy check</td>
-            </tr>
-            <tr>
-              <td><strong>UR-5 (KG)</strong></td>
-              <td>Recognize letter-sound correspondences (<span class="nastaliq-text">ب = بکری</span>)</td>
-              <td>RF.K.3.A</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Sound match mini-games & audio feedback</td>
-              <td>Letter➔sound fluency probe</td>
-            </tr>
-            <tr>
-              <td><strong>UR-6 (KG)</strong></td>
-              <td>Blend simple CVC patterns to read words</td>
-              <td>RF.K.2.C / RF.1.3</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Drag-and-blend word-builder activity</td>
-              <td>Decodable words read correctly</td>
-            </tr>
-            <tr>
-              <td><strong>UR-7 (Class 1)</strong></td>
-              <td>Read common sight words (<span class="nastaliq-text">میں، ہے، یہ</span>)</td>
-              <td>RF.1.3 / RF.1.4</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Flashcard decks & speed-read games</td>
-              <td>Sight word list accuracy ≥ 85%</td>
-            </tr>
-            <tr>
-              <td><strong>UR-9 (Class 1)</strong></td>
-              <td>Recognize & read Urdu ligatures & joined forms</td>
-              <td>RF.1.3 (Ext)</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Letter-joining practice & mini-lessons</td>
-              <td>Written decoding quiz</td>
-            </tr>
-            <tr>
-              <td><strong>UC-1 (KG)</strong></td>
-              <td>Listen to short stories & answer who/what/where questions</td>
-              <td>RL.K.1</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Story read-aloud with touchable answers</td>
-              <td>Comprehension check (3/4 questions correct)</td>
-            </tr>
-            <tr>
-              <td><strong>UC-6 (KG-1)</strong></td>
-              <td>Polite expressions & cultural vocabulary (<span class="nastaliq-text">سلام، شکریہ</span>)</td>
-              <td>Urdu-Specific</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Greeting animations & dialogue tasks</td>
-              <td>Role-play dialogue rubric</td>
-            </tr>
-            <tr>
-              <td><strong>UW-5 (Class 1)</strong></td>
-              <td>Correct spacing & alignment in Nastaliq script</td>
-              <td>Script-Specific</td>
-              <td><span class="coverage-badge coverage-full">✔ Extensive</span></td>
-              <td>Interactive guideline tracing feature</td>
-              <td>Teacher penmanship rubric</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="logo-wood">
-            <div class="logo-text-english">
-              <span class="logo-i1">i</span><span class="logo-l">l</span><span class="logo-m">m</span><span class="logo-i2">i</span>
-            </div>
-            <div class="logo-text-urdu">علمی</div>
-          </a>
-          <p>Empowering children worldwide with joyful, adaptive learning tools built on cognitive science.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Navigation</h4>
-          <ul>
+        <nav>
+          <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="curriculum.html" class="active">Curriculum</a></li>
             <li><a href="enterprise.html">Enterprise</a></li>
             <li><a href="user-guide.html">User Guide</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <ul>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
-            <li><a href="user-guide.html#troubleshooting">Help & Support</a></li>
+            <li class="nav-mobile-cta">
+              <a href="index.html#download" class="btn btn-primary"
+                >Get the App 🚀</a
+              >
+            </li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="footer-col">
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="#">Twitter / X</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="mailto:support@ilmiapp.com">support@ilmiapp.com</a></li>
-          </ul>
+        <div class="nav-actions">
+          <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            aria-label="Toggle Navigation"
+          >
+            ☰
+          </button>
         </div>
       </div>
+    </header>
 
-      <div class="footer-bottom">
-        <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
-        <p>Built with ❤️ for curious minds everywhere.</p>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge">SNC & CCSS Standards Alignment</div>
+          <h1 class="hero-title">
+            Urdu Curriculum &
+            <span class="text-gradient">Standards</span> Alignment
+          </h1>
+          <p class="hero-subtitle">
+            Demonstrating full coverage of Pakistan's Single National Curriculum
+            (SNC ECCE – Class 1) and parallel Common Core State Standards (CCSS
+            ULA) for early reading, phonics, writing, and language.
+          </p>
+
+          <!-- FILTER TABS -->
+          <div class="filter-tabs">
+            <button class="tab-btn active" data-filter="all">
+              All Domains 🌟
+            </button>
+            <button class="tab-btn" data-filter="reading">
+              Foundational Reading 📖
+            </button>
+            <button class="tab-btn" data-filter="comprehension">
+              Comprehension & Vocabulary 💡
+            </button>
+            <button class="tab-btn" data-filter="writing">
+              Nastaliq Writing ✍️
+            </button>
+            <button class="tab-btn" data-filter="speaking">
+              Speaking & Listening 🎙️
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script src="js/main.js"></script>
-</body>
+    <!-- URDU ALPHABET PROGRESSION LEVELS (Doc 3) -->
+    <section class="section-padding" style="padding-top: 0">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Categorized Letter Progression</div>
+          <h2>Categorized Urdu Alphabet Levels (حروف تہجی)</h2>
+          <p>
+            Divided into 4 progressive segments based on complexity of shape,
+            stroke order, curves, and dot identification.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- LEVEL 1 -->
+          <div
+            class="glass-card curriculum-card"
+            data-category="reading writing"
+          >
+            <div class="subject-badge">Level 1: Simple Shapes</div>
+            <h3 class="nastaliq-text">ا، آ، ب، پ، ت، ٹ، ث، ج، چ</h3>
+            <p style="margin-top: 0.5rem">
+              Visually simple, frequently used letters that are easy to
+              recognize, trace, and write.
+            </p>
+            <ul class="topic-list">
+              <li>
+                Letter Recognition: <span class="nastaliq-text">ا، ب</span>
+              </li>
+              <li>
+                Phonic sound:
+                <span class="nastaliq-text">ب = بکری، ت = تتلی</span>
+              </li>
+              <li>Object tracing & stroke guides</li>
+              <li>
+                Sight words: <span class="nastaliq-text">انار، انڈا، اونٹ</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- LEVEL 2 -->
+          <div
+            class="glass-card curriculum-card"
+            data-category="reading writing"
+          >
+            <div class="subject-badge">Level 2: Moderate Curves</div>
+            <h3 class="nastaliq-text">ح، خ، د، ڈ، ذ، ر، س ، ش، ص</h3>
+            <p style="margin-top: 0.5rem">
+              Introducing moderate curve shapes, dots recognition, and 3-letter
+              word formations.
+            </p>
+            <ul class="topic-list">
+              <li>
+                Letter Recognition: <span class="nastaliq-text">د، ر، س</span>
+              </li>
+              <li>
+                Phonic sound:
+                <span class="nastaliq-text">ح = حوض، خ = خربوزہ</span>
+              </li>
+              <li>Drag-and-blend CVC word builder</li>
+              <li>
+                Vocabulary: <span class="nastaliq-text">درخت، رکشہ، سیب</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- LEVEL 3 -->
+          <div
+            class="glass-card curriculum-card"
+            data-category="reading writing"
+          >
+            <div class="subject-badge">Level 3: Loops & Dots</div>
+            <h3 class="nastaliq-text">ض، ط، ظ، ع، غ، ف، ق، ک، گ</h3>
+            <p style="margin-top: 0.5rem">
+              Focus on loops, multi-dot distinctions, ligatures, and sentence
+              building.
+            </p>
+            <ul class="topic-list">
+              <li>
+                Letter Differentiation:
+                <span class="nastaliq-text">ض، ط/ظ</span>
+              </li>
+              <li>Ligatures & joined forms</li>
+              <li>Sentence builder with timed read</li>
+              <li>
+                Vocabulary: <span class="nastaliq-text">عینک، غبارہ، قلم</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- LEVEL 4 -->
+          <div
+            class="glass-card curriculum-card"
+            data-category="reading writing"
+          >
+            <div class="subject-badge">Level 4: Complex Ligatures</div>
+            <h3 class="nastaliq-text">ل، م، ن، و، ہ، ی ، ے</h3>
+            <p style="margin-top: 0.5rem">
+              Advanced letter joining, complex Nastaliq alignment, and story
+              comprehension.
+            </p>
+            <ul class="topic-list">
+              <li>Complex letter joining & tail strokes</li>
+              <li>Interactive story reading & questions</li>
+              <li>
+                Polite expressions:
+                <span class="nastaliq-text">سلام، شکریہ</span>
+              </li>
+              <li>Advanced vocabulary & postpositions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STANDARDS ALIGNMENT MATRIX TABLE (Doc 2) -->
+    <section
+      class="section-padding"
+      style="
+        background: #ffffff;
+        border-top: 3px solid rgba(101, 179, 46, 0.2);
+        border-bottom: 3px solid rgba(101, 179, 46, 0.2);
+      "
+    >
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Official Alignment Matrix</div>
+          <h2>SNC (ECCE – Class 1) & CCSS Standard Mapping</h2>
+          <p>
+            Complete coverage audit demonstrating curriculum compliance across
+            all early learning domains.
+          </p>
+        </div>
+        <div>
+          <h2>1. Foundational Reading Skills.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>ID & Grade</th>
+                <th>Urdu SLO (Single National Curriculum)</th>
+                <th>CCSS Standard</th>
+                <th>Coverage</th>
+                <th>In-App Activity</th>
+                <th>Assessment Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>UR-1 (KG)</strong></td>
+                <td>Hold book correctly; follow words R➔L & top➔bottom</td>
+                <td>RF.K.1 (A,B)</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>
+                  Interactive story mode with animated reading direction arrows
+                </td>
+                <td>Tap-to-highlight comprehension check</td>
+              </tr>
+              <tr>
+                <td><strong>UR-2 (KG)</strong></td>
+                <td>
+                  Recognize & name Urdu letters (<span class="nastaliq-text"
+                    >ا–ی</span
+                  >)
+                </td>
+                <td>RF.K.1.D</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Letter trace games & audio name identification</td>
+                <td>Letter ID quiz (≥ 80%)</td>
+              </tr>
+              <tr>
+                <td><strong>UR-3 (KG)</strong></td>
+                <td>Identify rhyming words</td>
+                <td>RF.K.2.A</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Rhyme-match bubble popper</td>
+                <td>Rhyme pairs accuracy check</td>
+              </tr>
+              <tr>
+                <td><strong>UR-4 (KG)</strong></td>
+                <td>Count & clap syllables in spoken words</td>
+                <td>RF.K.2.B</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Syllable-clap animations</td>
+                <td>Teacher observation checklist</td>
+              </tr>
+              <tr>
+                <td><strong>UR-5 (KG)</strong></td>
+                <td>Recognize letter-sound correspondences</td>
+                <td>RF.K.3.A</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Sound match mini-games</td>
+                <td>Letter→sound fluency probe</td>
+              </tr>
+              <tr>
+                <td><strong>UR-6 (KG)</strong></td>
+                <td>Blend simple CVC patterns</td>
+                <td>RF.K.2.C / RF.1.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Drag-and-blend word-builder</td>
+                <td>Decodable words read correctly</td>
+              </tr>
+              <tr>
+                <td><strong>UR-7 (Class 1)</strong></td>
+                <td>Read common sight words</td>
+                <td>RF.1.3 / RF.1.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Flash cards & speed-read games</td>
+                <td>≥ 85% accuracy</td>
+              </tr>
+              <tr>
+                <td><strong>UR-8 (Class 1)</strong></td>
+                <td>Decode new words using phonics & context</td>
+                <td>RF.1.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Adaptive phonics levels</td>
+                <td>Fluency task</td>
+              </tr>
+              <tr>
+                <td><strong>UR-9 (Class 1)</strong></td>
+                <td>Recognize Urdu ligatures and joined forms</td>
+                <td>RF.1.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Letter-joining practice</td>
+                <td>Written quiz</td>
+              </tr>
+              <tr>
+                <td><strong>UR-10 (Class 1)</strong></td>
+                <td>Read short sentences with fluency</td>
+                <td>RF.1.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Sentence builder</td>
+                <td>Fluency passage</td>
+              </tr>
+              <tr>
+                <td><strong>UR-11 (Class 2)</strong></td>
+                <td>Recognize full & partial letter forms in words</td>
+                <td>RF.2.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Ligature identification challenges</td>
+                <td>≥ 90% accuracy</td>
+              </tr>
+              <tr>
+                <td><strong>UR-12 (Class 2)</strong></td>
+                <td>Understand how letters join in complex words</td>
+                <td>RF.2.3.A</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Advanced word-building</td>
+                <td>Word formation task</td>
+              </tr>
+              <tr>
+                <td><strong>UR-13 (Class 2)</strong></td>
+                <td>Distinguish vowel and consonant sounds</td>
+                <td>RF.2.3.B</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Sound classification games</td>
+                <td>صوتی شناخت quiz</td>
+              </tr>
+              <tr>
+                <td><strong>UR-14 (Class 2)</strong></td>
+                <td>Read grade-level text fluently with expression</td>
+                <td>RF.2.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Timed reading (stories + poetry)</td>
+                <td>WPM + expression rubric</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>2. Reading Comprehension & Vocabulary Development.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>ID & Grade</th>
+                <th>Urdu SLO (Single National Curriculum)</th>
+                <th>CCSS Standard</th>
+                <th>Coverage</th>
+                <th>In-App Activity</th>
+                <th>Assessment Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>UC-1 (KG)</strong></td>
+                <td>Listen to stories & answer questions</td>
+                <td>RL.K.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Story read-aloud</td>
+                <td>3/4 correct</td>
+              </tr>
+              <tr>
+                <td><strong>UC-2 (KG)</strong></td>
+                <td>Retell main idea</td>
+                <td>RL.K.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Picture sequencing</td>
+                <td>Retell rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UC-3 (Class 1)</strong></td>
+                <td>Identify characters & events</td>
+                <td>RL.1.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Story map builder</td>
+                <td>≥ 80%</td>
+              </tr>
+              <tr>
+                <td><strong>UC-4 (Class 1)</strong></td>
+                <td>Answer literal questions</td>
+                <td>RL.1.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Quiz bubbles</td>
+                <td>4/5 correct</td>
+              </tr>
+              <tr>
+                <td><strong>UC-5 (Class 1)</strong></td>
+                <td>Understand vocabulary from context</td>
+                <td>L.1.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Word-picture matching</td>
+                <td>≥ 70% gain</td>
+              </tr>
+              <tr>
+                <td><strong>UC-6 (KG–1)</strong></td>
+                <td>Recognize polite expressions</td>
+                <td>N/A</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Dialogue tasks</td>
+                <td>Role-play rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UC-7 (Class 2)</strong></td>
+                <td>Read and understand passages independently</td>
+                <td>RL.2.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Guided reading modules</td>
+                <td>4/5 correct</td>
+              </tr>
+              <tr>
+                <td><strong>UC-8 (Class 2)</strong></td>
+                <td>Draw conclusions & make inferences</td>
+                <td>RL.2.1 / RL.2.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Prediction games</td>
+                <td>Inference rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UC-9 (Class 2)</strong></td>
+                <td>Identify characters, actions & outcomes</td>
+                <td>RL.2.3</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Character mapping</td>
+                <td>≥ 80%</td>
+              </tr>
+              <tr>
+                <td><strong>UC-10 (Class 2)</strong></td>
+                <td>Extract main idea from informational text</td>
+                <td>RI.2.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Highlight main idea</td>
+                <td>Identification task</td>
+              </tr>
+              <tr>
+                <td><strong>UC-11 (Class 2)</strong></td>
+                <td>Read poetry with rhyme & structure</td>
+                <td>RL.2.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Poetry reading mode</td>
+                <td>Fluency + rhythm</td>
+              </tr>
+              <tr>
+                <td><strong>UC-12 (Class 2)</strong></td>
+                <td>Understand contextual vocabulary</td>
+                <td>L.2.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Context clue puzzles</td>
+                <td>Vocabulary growth</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>3. Speaking & Listening.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>ID & Grade</th>
+                <th>Urdu SLO (Single National Curriculum)</th>
+                <th>CCSS Standard</th>
+                <th>Coverage</th>
+                <th>In-App Activity</th>
+                <th>Assessment Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>USL-1 (KG)</strong></td>
+                <td>Follow 2-step directions</td>
+                <td>SL.K.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Audio instruction games</td>
+                <td>3/4 correct</td>
+              </tr>
+              <tr>
+                <td><strong>USL-2 (KG)</strong></td>
+                <td>Describe objects</td>
+                <td>SL.K.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Show-and-tell avatars</td>
+                <td>Voice accuracy</td>
+              </tr>
+              <tr>
+                <td><strong>USL-3/4 (Class 1)</strong></td>
+                <td>Participate in discussions</td>
+                <td>SL.1.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Dialogue simulation</td>
+                <td>Checklist</td>
+              </tr>
+              <tr>
+                <td><strong>USL-5 (Class 2)</strong></td>
+                <td>Read aloud with rhythm & expression</td>
+                <td>SL.2.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Poetry recitation</td>
+                <td>Fluency score</td>
+              </tr>
+              <tr>
+                <td><strong>USL-6 (Class 2)</strong></td>
+                <td>Express opinions in discussions</td>
+                <td>SL.2.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Scenario discussions</td>
+                <td>Rubric</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>4. Writing & Spelling.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>ID & Grade</th>
+                <th>Urdu SLO (Single National Curriculum)</th>
+                <th>CCSS Standard</th>
+                <th>Coverage</th>
+                <th>In-App Activity</th>
+                <th>Assessment Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>UW-1 (KG)</strong></td>
+                <td>Copy letters and words</td>
+                <td>W.K.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Tracing game</td>
+                <td>Portfolio</td>
+              </tr>
+              <tr>
+                <td><strong>UW-2 (KG)</strong></td>
+                <td>Draw to express ideas</td>
+                <td>W.K.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Draw-and-say</td>
+                <td>Teacher review</td>
+              </tr>
+              <tr>
+                <td><strong>UW-3 (Class 1)</strong></td>
+                <td>Write own name & words</td>
+                <td>W.1.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Name builder</td>
+                <td>Writing sample</td>
+              </tr>
+              <tr>
+                <td><strong>UW-4 (Class 1)</strong></td>
+                <td>Write simple sentences</td>
+                <td>W.1.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Sentence builder</td>
+                <td>Rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UW-5 (Class 1)</strong></td>
+                <td>Proper Nastaliq spacing</td>
+                <td>N/A</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Guideline tracing</td>
+                <td>Penmanship</td>
+              </tr>
+              <tr>
+                <td><strong>UW-6 (Class 2)</strong></td>
+                <td>Write short paragraphs</td>
+                <td>W.2.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Paragraph builder</td>
+                <td>Structure rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UW-7 (Class 2)</strong></td>
+                <td>Use punctuation & spacing correctly</td>
+                <td>L.2.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Sentence correction</td>
+                <td>≥ 80% accuracy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>5. Language (Grammar & Usage).</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>ID & Grade</th>
+                <th>Urdu SLO (Single National Curriculum)</th>
+                <th>CCSS Standard</th>
+                <th>Coverage</th>
+                <th>In-App Activity</th>
+                <th>Assessment Evidence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>UL-1 (KG)</strong></td>
+                <td>Identify nouns & verbs</td>
+                <td>L.K.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Sorting game</td>
+                <td>4/5 correct</td>
+              </tr>
+              <tr>
+                <td><strong>UL-2 (Class 1)</strong></td>
+                <td>Use pronouns & postpositions</td>
+                <td>L.1.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Sentence game</td>
+                <td>3 correct</td>
+              </tr>
+              <tr>
+                <td><strong>UL-3 (Class 1)</strong></td>
+                <td>Form negations & questions</td>
+                <td>L.1.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Dialogue practice</td>
+                <td>≥ 70%</td>
+              </tr>
+              <tr>
+                <td><strong>UL-4 (Class 1)</strong></td>
+                <td>Use vocabulary in sentences</td>
+                <td>L.1.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Word-bank builder</td>
+                <td>80% accuracy</td>
+              </tr>
+              <tr>
+                <td><strong>UL-5 (Class 2)</strong></td>
+                <td>Expand sentences using adjectives</td>
+                <td>L.2.1</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Sentence expansion</td>
+                <td>Complexity rubric</td>
+              </tr>
+              <tr>
+                <td><strong>UL-6 (Class 2)</strong></td>
+                <td>Understand context-based usage</td>
+                <td>L.2.4</td>
+                <td>
+                  <span class="coverage-badge coverage-full">◐ </span>
+                </td>
+                <td>Context dialogue</td>
+                <td>≥ 75%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>6. Assessment & Progress Monitoring.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Practice / Feature</th>
+                <th>Comparable Standard</th>
+                <th>Coverage</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Progress Tracking</strong></td>
+                <td>Built-in reports & analytics</td>
+                <td>CCSS formative assessment</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Tracks KG–2 progress</td>
+              </tr>
+              <tr>
+                <td><strong>Portfolios</strong></td>
+                <td>Saved reading/writing samples</td>
+                <td>RF.2.4 / W.2.2</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Includes audio + writing</td>
+              </tr>
+              <tr>
+                <td><strong>Benchmark Checks</strong></td>
+                <td>Fluency & comprehension tests</td>
+                <td>RL.2.10</td>
+                <td>
+                  <span class="coverage-badge coverage-full">✔ </span>
+                </td>
+                <td>Grade-level benchmarks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div>
+          <h2>Summary of Coverage.</h2>
+        </div>
+
+        <div class="standards-table-wrapper">
+          <table class="standards-table">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>(✔)</th>
+                <th>Partial (◐)</th>
+                <th>Not Covered (✖)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Foundational Reading Skills</strong></td>
+                <td>12</td>
+                <td>2</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Comprehension & Vocabulary</strong></td>
+                <td>8</td>
+                <td>4</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Speaking & Listening</strong></td>
+                <td>3</td>
+                <td>2</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Writing & Spelling</strong></td>
+                <td>5</td>
+                <td>2</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Grammar & Usage</strong></td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td>31</td>
+                <td>13</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-wood">
+              <div class="logo-text-english">
+                <img
+                  src="assets/ilmi_logo.svg"
+                  alt="ILMI Urdu Learning App Banner"
+                  class="logo-i2"
+                  width="120"
+                  height="120"
+                />
+              </div>
+            </a>
+            <p>
+              Empowering children worldwide with joyful, adaptive mother-tongue
+              learning tools built on cognitive science.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="curriculum.html">Curriculum</a></li>
+              <li><a href="enterprise.html">Enterprise</a></li>
+              <li><a href="user-guide.html">User Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
+              <li>
+                <a href="user-guide.html#troubleshooting">Help & Support</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="#">Twitter / X</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li>
+                <a href="mailto:support@ilmiapp.com">support@ilmiapp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
+          <p>Built with ❤️ for curious minds everywhere.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
