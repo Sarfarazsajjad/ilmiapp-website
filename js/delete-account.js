@@ -14,10 +14,6 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
-// Firebase WEB app config. These values are public by design. The project id
-// comes from the Android google-services.json; the rest must be copied from the
-// Firebase console (Project settings > Your apps > Web app). Until every
-// REPLACE_ value is filled in, sign-in is disabled on the page.
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyARAC7mEuSCODXhWr-EjDVeezRrkFQ3NNM",
   authDomain: "ilmi-e08cd.firebaseapp.com",
@@ -25,10 +21,8 @@ const FIREBASE_CONFIG = {
   appId: "1:500046081203:web:a3c3eb030b0273367d54c6",
 };
 
-// Apple sign-in on the web needs extra Firebase/Apple setup; keep off until done.
 const ENABLE_APPLE = false;
 
-// The one place the API address lives. Local preview talks to the dev stack.
 const API_BASE =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
     ? "http://localhost:8000/api"
@@ -47,7 +41,7 @@ function say(text, kind = "") {
 }
 
 let auth = null;
-let busy = false; // one call at a time, never send twice
+let busy = false;
 
 function syncDeleteButton() {
   $("daDelete").disabled =
@@ -74,6 +68,8 @@ async function endSession() {
   showSignedIn(null);
 }
 
+// signInWithPopup MUST be the very first await in this function.
+// Any await before it breaks the browser's user-gesture chain and the popup is blocked.
 async function startSignIn(provider) {
   say("");
   try {
@@ -99,7 +95,12 @@ async function deleteAccount() {
   busy = true;
   syncDeleteButton();
   $("daDialog").close();
-  say("Deleting your account. Please wait…");
+  statusBox.innerHTML =
+    '<span class="da-spinner"></span> Deleting your account. Please wait…';
+  statusBox.className = "da-status";
+  statusBox.hidden = false;
+  $("daConfirm").disabled = true;
+  $("daCancel").disabled = true;
   let outcome;
   try {
     const idToken = await auth.currentUser.getIdToken(true);
@@ -120,6 +121,8 @@ async function deleteAccount() {
     outcome = "error";
   }
   busy = false;
+  $("daConfirm").disabled = false;
+  $("daCancel").disabled = false;
   await endSession();
   if (outcome === "deleted") {
     say(
@@ -144,18 +147,20 @@ async function deleteAccount() {
   }
 }
 
-function init() {
+async function init() {
   if (!configured) {
     say(
-      "Account deletion on this page is not available yet. Please use the app (Profile → Settings → Delete Account) or email info@itretina.com.",
+      "Account deletion on this page is not available yet. Please use the app (Profile \u2192 Settings \u2192 Delete Account) or email info@itretina.com.",
       "error",
     );
     $("daGoogle").disabled = true;
     return;
   }
-  auth = getAuth(initializeApp(FIREBASE_CONFIG));
-  const ready = setPersistence(auth, browserSessionPersistence);
 
+  auth = getAuth(initializeApp(FIREBASE_CONFIG));
+
+  // Attach listeners immediately — before any awaits — so clicks are never missed.
+  // auth is assigned above (synchronously) so it is safe to reference in the handlers.
   $("daGoogle").addEventListener("click", () =>
     startSignIn(new GoogleAuthProvider()),
   );
@@ -170,14 +175,20 @@ function init() {
   $("daType").addEventListener("input", syncDeleteButton);
   $("daStepConfirm").addEventListener("submit", (e) => {
     e.preventDefault();
-    if (!$("daDelete").disabled) $("daDialog").showModal(); // Cancel has autofocus
+    if (!$("daDelete").disabled) $("daDialog").showModal();
   });
   $("daCancel").addEventListener("click", () => $("daDialog").close());
   $("daConfirm").addEventListener("click", deleteAccount);
 
-  ready
-    .then(() => getRedirectResult(auth))
-    .catch(() => say("Sign-in did not work. Please try again.", "error"));
+  // Now do the async setup. If setPersistence fails the page still works
+  // because Firebase falls back to in-memory persistence automatically.
+  try {
+    await setPersistence(auth, browserSessionPersistence);
+    await getRedirectResult(auth);
+  } catch {
+    say("Sign-in did not work. Please try again.", "error");
+  }
+
   onAuthStateChanged(auth, (user) => {
     if (!busy) showSignedIn(user);
   });

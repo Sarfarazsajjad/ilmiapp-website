@@ -108,6 +108,22 @@
         text-decoration: underline;
         cursor: pointer;
       }
+      .da-spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(2, 132, 199, 0.25);
+        border-top-color: var(--sky-blue-deep);
+        border-radius: 50%;
+        animation: da-spin 0.75s linear infinite;
+        vertical-align: middle;
+        margin-right: 0.4rem;
+      }
+      @keyframes da-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
       .btn:disabled {
         opacity: 0.5;
         cursor: not-allowed;
