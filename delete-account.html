@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Delete your ILMI parent account and your children's data from the web, without opening the app."
+    />
+    <title>Delete your ILMI account | ILMI</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      .da-card {
+        padding: 2.5rem 2rem;
+        text-align: left;
+        line-height: 1.6;
+      }
+      .da-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-soft);
+        border-color: rgba(101, 179, 46, 0.2);
+      }
+      .da-card .topic-list {
+        margin: 0.5rem 0 1rem;
+        padding: 0;
+      }
+      .da-card .topic-list li {
+        align-items: flex-start;
+        font-weight: 600;
+      }
+      .da-card .topic-list li::before {
+        flex: none;
+        line-height: 1.6;
+      }
+      .da-card ol {
+        margin: 0.5rem 0 1rem;
+      }
+      .da-card ol li {
+        padding: 0.25rem 0;
+      }
+      .da-card h2,
+      .da-card h3 {
+        color: var(--meadow-green-dark);
+        margin: 1.5rem 0 0.75rem;
+      }
+      .da-card h2:first-child {
+        margin-top: 0;
+      }
+      .da-card p {
+        margin: 0.75rem 0;
+      }
+      .da-box {
+        background: var(--sun-yellow-light);
+        border: 2px solid var(--sun-yellow);
+        border-radius: var(--radius-sm);
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+      }
+      .da-box h3 {
+        margin-top: 0;
+      }
+      .da-steps {
+        padding-left: 1.5rem;
+      }
+      .da-muted {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+      .da-status {
+        border-radius: var(--radius-sm);
+        padding: 1rem 1.25rem;
+        margin: 1.5rem 0;
+        font-weight: 700;
+        background: var(--sky-blue-light);
+        border: 2px solid var(--sky-blue-deep);
+      }
+      .da-status.da-error {
+        background: #ffe9e5;
+        border-color: var(--fox-coral);
+        color: #8a1f0c;
+      }
+      .da-status.da-ok {
+        background: var(--meadow-green-light);
+        border-color: var(--meadow-green);
+        color: var(--meadow-green-dark);
+      }
+      .da-confirm {
+        margin: 1.5rem 0;
+        padding: 1.25rem;
+        border: 2px solid var(--fox-coral);
+        border-radius: var(--radius-sm);
+      }
+      .da-confirm input[type="text"] {
+        font: inherit;
+        padding: 0.6rem 0.8rem;
+        border: 2px solid var(--border-color-strong);
+        border-radius: var(--radius-sm);
+        width: 100%;
+        max-width: 16rem;
+      }
+      .da-link {
+        background: none;
+        border: none;
+        padding: 0;
+        font: inherit;
+        color: var(--sky-blue-deep);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .da-spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(2, 132, 199, 0.25);
+        border-top-color: var(--sky-blue-deep);
+        border-radius: 50%;
+        animation: da-spin 0.75s linear infinite;
+        vertical-align: middle;
+        margin-right: 0.4rem;
+      }
+      @keyframes da-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+      }
+      #daStepSignIn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+      .da-dialog {
+        margin: auto;
+        border: 3px solid var(--fox-coral);
+        border-radius: var(--radius-sm);
+        padding: 1.5rem;
+        max-width: min(32rem, 92vw);
+      }
+      .da-dialog::backdrop {
+        background: rgba(0, 0, 0, 0.55);
+      }
+      .da-dialog h2 {
+        color: #8a1f0c;
+        margin-top: 0;
+      }
+      .da-dialog-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+    </style>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION HEADER -->
+    <header class="header">
+      <div class="container nav-container">
+        <div class="logo-text-english">
+          <img
+            src="assets/ilmi_logo.svg"
+            alt="ILMI Urdu Learning App Banner"
+            class="logo-i2"
+            width="120"
+            height="120"
+          />
+        </div>
+
+        <nav>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="curriculum.html">Curriculum</a></li>
+            <li><a href="enterprise.html">Enterprise</a></li>
+            <li><a href="user-guide.html">User Guide</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li>
+              <a href="delete-account.html" class="active">Delete Account</a>
+            </li>
+            <li class="nav-mobile-cta">
+              <a href="index.html#download" class="btn btn-primary"
+                >Get the App 🚀</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="index.html#download" class="btn btn-primary nav-desktop-cta"
+            >Get the App 🚀</a
+          >
+          <button
+            class="mobile-toggle"
+            id="mobileToggle"
+            aria-label="Toggle Navigation"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <div class="badge">Parents</div>
+          <h1 class="hero-title">
+            Delete your <span class="text-gradient">ILMI account</span>
+          </h1>
+          <p class="hero-subtitle">
+            Remove your account and your children's data without installing or
+            opening the app.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-padding" style="padding-top: 1">
+      <div class="container" style="max-width: 900px">
+        <div class="glass-card da-card">
+          <h2>About this page</h2>
+          <p>
+            This page is for
+            <strong>parents who signed in to ILMI with Google or Apple</strong>.
+            It lets you delete your account and your children's data from any
+            browser. You can also do it inside the app:
+            <strong
+              >Profile &rarr; Settings (gear icon) &rarr; Delete Account</strong
+            >.
+          </p>
+          <p>
+            We use the sign-in below (Google or Apple) only to confirm that it
+            is you. We do not keep anything from this page.
+          </p>
+
+          <div class="da-box" role="note">
+            <h3>Before you start</h3>
+            <ul class="topic-list">
+              <li>
+                <span
+                  >Use the <strong>same Google or Apple account</strong> you use
+                  in ILMI.</span
+                >
+              </li>
+              <li>
+                <span
+                  ><strong>School accounts</strong> cannot be deleted here.
+                  Schools delete accounts through their administrator &mdash;
+                  please contact your school.</span
+                >
+              </li>
+              <li>
+                <span
+                  >Deleting your ILMI account does <strong>not</strong> cancel a
+                  subscription. Cancel it separately in Google Play (Play Store
+                  &rarr; Payments &amp; subscriptions &rarr;
+                  Subscriptions).</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <h3>What will be deleted</h3>
+          <ul class="topic-list">
+            <li><span>Your parent account and sign-in record</span></li>
+            <li><span>Every child profile you created</span></li>
+            <li><span>All learning progress for those children</span></li>
+            <li>
+              <span
+                >Your consent records and emails we logged for your
+                account</span
+              >
+            </li>
+          </ul>
+          <p>
+            <strong>This cannot be undone.</strong> Deletion happens straight
+            away on our servers. Your Google account itself is not affected.
+          </p>
+          <p>
+            If a phone still holds a child's progress, it is not changed by this
+            page. The next time the app is opened and syncs, it finds that the
+            account no longer exists, saves what is on the phone, and signs out.
+          </p>
+
+          <h3>How it works</h3>
+          <ol class="da-steps">
+            <li><span>Sign in with Google or Apple</span></li>
+            <li>
+              <span>Check that the email shown is the right account</span>
+            </li>
+            <li><span>Confirm twice</span></li>
+            <li><span>Done</span></li>
+          </ol>
+
+          <p class="da-muted" id="daAppleNote">
+            Signed in with Apple? Choose 'Continue with Apple' when it appears
+            below. If it does not, delete your account in the app or email us at
+            the address at the bottom.
+          </p>
+
+          <div
+            id="daStatus"
+            class="da-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+          <div id="daStepSignIn">
+            <button type="button" id="daGoogle" class="btn btn-secondary">
+              Continue with Google
+            </button>
+            <button type="button" id="daApple" class="btn btn-secondary" hidden>
+              Continue with Apple
+            </button>
+          </div>
+
+          <form id="daStepConfirm" class="da-confirm" hidden novalidate>
+            <p>Signed in as <strong id="daEmail"></strong></p>
+            <p class="da-muted">
+              Not the right account?
+              <button type="button" id="daSwitch" class="da-link">
+                Sign out and start again
+              </button>
+            </p>
+            <p>
+              <label>
+                <input type="checkbox" id="daAck" />
+                I understand this cannot be undone
+              </label>
+            </p>
+            <p>
+              <label for="daType"
+                >Type <strong>DELETE</strong> to continue</label
+              ><br />
+              <input
+                type="text"
+                id="daType"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+              />
+            </p>
+            <button type="submit" id="daDelete" class="btn btn-coral" disabled>
+              Delete my account
+            </button>
+          </form>
+
+          <p class="da-muted">
+            Need help? Email
+            <a href="mailto:info@itretina.com">info@itretina.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <dialog id="daDialog" class="da-dialog" aria-labelledby="daDialogTitle">
+      <h2 id="daDialogTitle">Delete this account permanently?</h2>
+      <p>Account: <strong id="daDialogEmail"></strong></p>
+      <p>This will permanently delete:</p>
+      <ul class="topic-list">
+        <li><span>your parent account and sign-in record</span></li>
+        <li><span>every child profile</span></li>
+        <li><span>all learning progress</span></li>
+        <li><span>your consent records</span></li>
+      </ul>
+      <p><strong>This cannot be undone.</strong></p>
+      <div class="da-dialog-actions">
+        <button type="button" id="daCancel" class="btn btn-secondary" autofocus>
+          Cancel
+        </button>
+        <button type="button" id="daConfirm" class="btn btn-coral">
+          Yes, delete permanently
+        </button>
+      </div>
+    </dialog>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo-wood">
+              <div class="logo-text-english">
+                <img
+                  src="assets/ilmi_logo.svg"
+                  alt="ILMI Urdu Learning App Banner"
+                  class="logo-i2"
+                  width="120"
+                  height="120"
+                />
+              </div>
+            </a>
+            <p>
+              Empowering children worldwide with joyful, adaptive mother-tongue
+              learning tools built on cognitive science.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="curriculum.html">Curriculum</a></li>
+              <li><a href="enterprise.html">Enterprise</a></li>
+              <li><a href="user-guide.html">User Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="user-guide.html#parent-guide">Parent Guide</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">info@itretina.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 IlmiApp.com. All rights reserved.</p>
+          <p>Built with ❤️ for curious minds everywhere.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script type="module" src="js/delete-account.js"></script>
+  </body>
+</html>
