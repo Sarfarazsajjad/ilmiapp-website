@@ -6,7 +6,6 @@ import {
   setPersistence,
   browserSessionPersistence,
   GoogleAuthProvider,
-  OAuthProvider,
   signInWithPopup,
   signInWithRedirect,
   getRedirectResult,
@@ -14,14 +13,29 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
+import {
+  normalizeOutcome,
+  savePending,
+  loadPending,
+  clearPending,
+  RESULTS,
+} from "./delete-notice.js";
+
+// Firebase WEB config. Safe to publish: Firebase documents these values as public identifiers,
+// not secrets (https://firebase.google.com/docs/projects/api-keys). They only tell the SDK which
+// project to talk to; access is enforced by Firebase Auth and by our server, never by hiding them.
+//   apiKey     - identifies this project to Firebase's public Auth endpoints. NOT an
+//                authorization credential; restrict it to this site in Google Cloud Console.
+//   authDomain - domain that hosts the Google sign-in popup/redirect handler.
+//   projectId  - the Firebase project's unique id.
+//   appId      - identifies this web app registration inside the project.
+// Never put here: a service-account JSON, a private key or any server secret.
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyARAC7mEuSCODXhWr-EjDVeezRrkFQ3NNM",
   authDomain: "ilmi-e08cd.firebaseapp.com",
   projectId: "ilmi-e08cd",
   appId: "1:500046081203:web:a3c3eb030b0273367d54c6",
 };
-
-const ENABLE_APPLE = false;
 
 const API_BASE =
   location.hostname === "localhost" || location.hostname === "127.0.0.1"
@@ -48,7 +62,30 @@ function syncDeleteButton() {
     busy || !($("daAck").checked && $("daType").value === "DELETE");
 }
 
+// True while the post-deletion notice is on screen. While true, nothing may
+// bring back the sign-in or confirm views (the user is signed out after deletion).
+let pendingShown = false;
+
+function showPending(p) {
+  const r = RESULTS[p.outcome];
+  pendingShown = true;
+  $("daMain").hidden = true;
+  $("daResult").hidden = false;
+  $("daResultTitle").textContent = r.title;
+  $("daResultBox").className = "da-status " + (r.ok ? "da-ok" : "da-error");
+  $("daResultText").textContent = r.text;
+  const n = $("daResultNotice");
+  n.textContent = "";
+  const b = document.createElement("strong");
+  b.textContent = r.bold;
+  n.append(b, r.rest);
+  n.hidden = !r.bold;
+  $("daResultSteps").hidden = !r.steps;
+  $("daResultSteps").textContent = r.steps || "";
+}
+
 function showSignedIn(user) {
+  if (pendingShown) return;
   $("daStepSignIn").hidden = !!user;
   $("daStepConfirm").hidden = !user;
   const email = user ? user.email || "(no email on this account)" : "";
@@ -95,6 +132,7 @@ async function deleteAccount() {
   busy = true;
   syncDeleteButton();
   $("daDialog").close();
+  $("daBusy").hidden = false; // full-page loader until the server answers
   statusBox.innerHTML =
     '<span class="da-spinner"></span> Deleting your account. Please wait…';
   statusBox.className = "da-status";
@@ -102,6 +140,7 @@ async function deleteAccount() {
   $("daConfirm").disabled = true;
   $("daCancel").disabled = true;
   let outcome;
+  let cancellation;
   try {
     const idToken = await auth.currentUser.getIdToken(true);
     const res = await fetch(`${API_BASE}/parents/delete-account`, {
@@ -111,8 +150,12 @@ async function deleteAccount() {
       body: JSON.stringify({ idToken }),
     });
     const body = await res.json().catch(() => ({}));
-    if (res.ok && body.status === "deleted") outcome = "deleted";
-    else if (res.status === 404 && body.status === "not_found")
+    if (res.ok && body.status === "deleted") {
+      outcome = "deleted";
+      // Persist the moment the response arrives, before anything else can fail.
+      cancellation = normalizeOutcome(body.subscriptionCancellation);
+      savePending(cancellation);
+    } else if (res.status === 404 && body.status === "not_found")
       outcome = "not_found";
     else if (res.status === 401 && body.code === "REAUTH_REQUIRED")
       outcome = "reauth";
@@ -121,17 +164,19 @@ async function deleteAccount() {
     outcome = "error";
   }
   busy = false;
+  $("daBusy").hidden = true;
   $("daConfirm").disabled = false;
   $("daCancel").disabled = false;
-  await endSession();
   if (outcome === "deleted") {
+    showPending({ outcome: cancellation });
+    say("");
+    await endSession();
+    return;
+  }
+  await endSession();
+  if (outcome === "not_found") {
     say(
-      "Your ILMI account and all of its data have been deleted, and you have been signed out of this page. If you have a subscription, please cancel it in Google Play.",
-      "ok",
-    );
-  } else if (outcome === "not_found") {
-    say(
-      "We could not find an ILMI account for this sign-in. Nothing was deleted. Check that you used the same Google or Apple account as in the app.",
+      "We could not find an ILMI account for this sign-in. Nothing was deleted. Check that you used the same Google account as in the app.",
       "error",
     );
   } else if (outcome === "reauth") {
@@ -148,6 +193,18 @@ async function deleteAccount() {
 }
 
 async function init() {
+  // FIRST: a pending result must show on every load until acknowledged, before
+  // any sign-in view and even if Firebase is not configured or fails to load.
+  const pending = loadPending();
+  if (pending) showPending(pending);
+  $("daResultAck").addEventListener("click", () => {
+    clearPending(); // the ONLY place a pending notice is cleared
+    pendingShown = false;
+    $("daResult").hidden = true;
+    $("daMain").hidden = false;
+    showSignedIn(auth ? auth.currentUser : null);
+  });
+
   if (!configured) {
     say(
       "Account deletion on this page is not available yet. Please use the app (Profile \u2192 Settings \u2192 Delete Account) or email info@itretina.com.",
@@ -164,12 +221,6 @@ async function init() {
   $("daGoogle").addEventListener("click", () =>
     startSignIn(new GoogleAuthProvider()),
   );
-  if (ENABLE_APPLE) {
-    $("daApple").hidden = false;
-    $("daApple").addEventListener("click", () =>
-      startSignIn(new OAuthProvider("apple.com")),
-    );
-  }
   $("daSwitch").addEventListener("click", endSession);
   $("daAck").addEventListener("change", syncDeleteButton);
   $("daType").addEventListener("input", syncDeleteButton);
