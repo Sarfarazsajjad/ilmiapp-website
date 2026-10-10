@@ -119,6 +119,46 @@
         vertical-align: middle;
         margin-right: 0.4rem;
       }
+      .da-busy {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(15, 23, 42, 0.55);
+        padding: 1rem;
+      }
+      .da-busy[hidden] {
+        display: none;
+      }
+      .da-busy-card {
+        background: #fff;
+        border-radius: 1.25rem;
+        padding: 1.75rem 2rem 1.5rem;
+        max-width: 20rem;
+        text-align: center;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+      }
+      .da-busy-ring {
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto 1.1rem;
+        border: 0.3rem solid rgba(2, 132, 199, 0.2);
+        border-top-color: var(--sky-blue-deep);
+        border-radius: 50%;
+        animation: da-spin 0.75s linear infinite;
+      }
+      .da-busy-title {
+        font-weight: 800;
+        font-size: 1.15rem;
+        margin: 0 0 0.4rem;
+      }
+      .da-busy-text {
+        margin: 0;
+        color: #475569;
+        font-size: 0.95rem;
+      }
       @keyframes da-spin {
         to {
           transform: rotate(360deg);
@@ -229,141 +269,200 @@
     <section class="section-padding" style="padding-top: 1">
       <div class="container" style="max-width: 900px">
         <div class="glass-card da-card">
-          <h2>About this page</h2>
-          <p>
-            This page is for
-            <strong>parents who signed in to ILMI with Google or Apple</strong>.
-            It lets you delete your account and your children's data from any
-            browser. You can also do it inside the app:
-            <strong
-              >Profile &rarr; Settings (gear icon) &rarr; Delete Account</strong
-            >.
-          </p>
-          <p>
-            We use the sign-in below (Google or Apple) only to confirm that it
-            is you. We do not keep anything from this page.
-          </p>
+          <div id="daResult" role="alert" hidden>
+            <h2 id="daResultTitle"></h2>
+            <div id="daResultBox" class="da-status">
+              <p id="daResultText"></p>
+              <p id="daResultNotice"></p>
+              <p id="daResultSteps" hidden></p>
+            </div>
+            <button type="button" id="daResultAck" class="btn btn-primary">
+              I have read this
+            </button>
+          </div>
+          <div id="daMain">
+            <h2>About this page</h2>
+            <p>
+              This page is for
+              <strong>parents who signed in to ILMI with Google</strong>. It
+              lets you delete your account and your children's data from any
+              browser. You can also do it inside the app:
+              <strong
+                >Profile &rarr; Settings (gear icon) &rarr; Delete
+                Account</strong
+              >.
+            </p>
+            <p>
+              We use the sign-in below (Google) only to confirm that it is you.
+              We do not keep anything from this page.
+            </p>
 
-          <div class="da-box" role="note">
-            <h3>Before you start</h3>
+            <div class="da-box" role="note">
+              <h3>Before you start</h3>
+              <ul class="topic-list">
+                <li>
+                  <span
+                    >Use the <strong>same Google account</strong> you use in
+                    ILMI.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    ><strong>School accounts</strong> cannot be deleted here.
+                    Schools delete accounts through their administrator &mdash;
+                    please contact your school.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    ><strong
+                      >If you have a subscription, it ends immediately</strong
+                    >
+                    when you delete your account: access stops now and renewal
+                    stops.
+                    <strong
+                      >Refunds are handled by Google Play, not by us.</strong
+                    >
+                    Deleting your account ends your subscription immediately and
+                    Google Play refunds your latest payment. If you have not
+                    received it or have questions, contact Google Play
+                    support.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <h3>What will be deleted</h3>
             <ul class="topic-list">
+              <li><span>Your parent account and sign-in record</span></li>
+              <li><span>Every child profile you created</span></li>
+              <li><span>All learning progress for those children</span></li>
               <li>
                 <span
-                  >Use the <strong>same Google or Apple account</strong> you use
-                  in ILMI.</span
-                >
-              </li>
-              <li>
-                <span
-                  ><strong>School accounts</strong> cannot be deleted here.
-                  Schools delete accounts through their administrator &mdash;
-                  please contact your school.</span
-                >
-              </li>
-              <li>
-                <span
-                  >Deleting your ILMI account does <strong>not</strong> cancel a
-                  subscription. Cancel it separately in Google Play (Play Store
-                  &rarr; Payments &amp; subscriptions &rarr;
-                  Subscriptions).</span
+                  >Your consent records and emails we logged for your
+                  account</span
                 >
               </li>
             </ul>
-          </div>
+            <p>
+              <strong>This cannot be undone.</strong> Deletion happens straight
+              away on our servers. Your Google account itself is not affected.
+            </p>
+            <p>
+              If a phone still holds a child's progress, it is not changed by
+              this page. The next time the app is opened and syncs, it finds
+              that the account no longer exists, saves what is on the phone, and
+              signs out.
+            </p>
 
-          <h3>What will be deleted</h3>
-          <ul class="topic-list">
-            <li><span>Your parent account and sign-in record</span></li>
-            <li><span>Every child profile you created</span></li>
-            <li><span>All learning progress for those children</span></li>
-            <li>
-              <span
-                >Your consent records and emails we logged for your
-                account</span
-              >
-            </li>
-          </ul>
-          <p>
-            <strong>This cannot be undone.</strong> Deletion happens straight
-            away on our servers. Your Google account itself is not affected.
-          </p>
-          <p>
-            If a phone still holds a child's progress, it is not changed by this
-            page. The next time the app is opened and syncs, it finds that the
-            account no longer exists, saves what is on the phone, and signs out.
-          </p>
+            <h3>How it works</h3>
+            <ol class="da-steps">
+              <li><span>Sign in with Google</span></li>
+              <li>
+                <span>Check that the email shown is the right account</span>
+              </li>
+              <li><span>Confirm twice</span></li>
+              <li><span>Done</span></li>
+            </ol>
 
-          <h3>How it works</h3>
-          <ol class="da-steps">
-            <li><span>Sign in with Google or Apple</span></li>
-            <li>
-              <span>Check that the email shown is the right account</span>
-            </li>
-            <li><span>Confirm twice</span></li>
-            <li><span>Done</span></li>
-          </ol>
+            <div
+              id="daStatus"
+              class="da-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></div>
 
-          <p class="da-muted" id="daAppleNote">
-            Signed in with Apple? Choose 'Continue with Apple' when it appears
-            below. If it does not, delete your account in the app or email us at
-            the address at the bottom.
-          </p>
-
-          <div
-            id="daStatus"
-            class="da-status"
-            role="status"
-            aria-live="polite"
-            hidden
-          ></div>
-
-          <div id="daStepSignIn">
-            <button type="button" id="daGoogle" class="btn btn-secondary">
-              Continue with Google
-            </button>
-            <button type="button" id="daApple" class="btn btn-secondary" hidden>
-              Continue with Apple
-            </button>
-          </div>
-
-          <form id="daStepConfirm" class="da-confirm" hidden novalidate>
-            <p>Signed in as <strong id="daEmail"></strong></p>
-            <p class="da-muted">
-              Not the right account?
-              <button type="button" id="daSwitch" class="da-link">
-                Sign out and start again
+            <div id="daStepSignIn">
+              <button type="button" id="daGoogle" class="btn btn-secondary">
+                Continue with Google
               </button>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" id="daAck" />
-                I understand this cannot be undone
-              </label>
-            </p>
-            <p>
-              <label for="daType"
-                >Type <strong>DELETE</strong> to continue</label
-              ><br />
-              <input
-                type="text"
-                id="daType"
-                autocomplete="off"
-                autocapitalize="characters"
-                spellcheck="false"
-              />
-            </p>
-            <button type="submit" id="daDelete" class="btn btn-coral" disabled>
-              Delete my account
-            </button>
-          </form>
+            </div>
 
-          <p class="da-muted">
-            Need help? Email
-            <a href="mailto:info@itretina.com">info@itretina.com</a>.
-          </p>
+            <form id="daStepConfirm" class="da-confirm" hidden novalidate>
+              <p>Signed in as <strong id="daEmail"></strong></p>
+              <p class="da-muted">
+                Not the right account?
+                <button type="button" id="daSwitch" class="da-link">
+                  Sign out and start again
+                </button>
+              </p>
+              <div class="da-box" role="note">
+                <p>
+                  <strong
+                    >If you have a subscription, your access ends now.</strong
+                  >
+                  Deleting your account ends it immediately and it will not
+                  renew.
+                </p>
+                <p>
+                  <strong
+                    >Refunds are handled by Google Play, not by us.</strong
+                  >
+                  Deleting your account ends your subscription immediately and
+                  Google Play refunds your latest payment. If you have not
+                  received it or have questions, contact Google Play support.
+                </p>
+                <p class="da-muted">
+                  If you prefer to cancel it yourself first (fallback): Play
+                  Store &rarr; profile icon &rarr; Payments &amp; subscriptions
+                  &rarr; Subscriptions &rarr; ilmi &rarr; Cancel subscription.
+                </p>
+              </div>
+              <p>
+                <label>
+                  <input type="checkbox" id="daAck" />
+                  I understand that this cannot be undone, that any subscription
+                  ends immediately and I lose access now, and that refunds are
+                  handled by Google Play, not by ILMI
+                </label>
+              </p>
+              <p>
+                <label for="daType"
+                  >Type <strong>DELETE</strong> to continue</label
+                ><br />
+                <input
+                  type="text"
+                  id="daType"
+                  autocomplete="off"
+                  autocapitalize="characters"
+                  spellcheck="false"
+                />
+              </p>
+              <button
+                type="submit"
+                id="daDelete"
+                class="btn btn-coral"
+                disabled
+              >
+                Delete my account
+              </button>
+            </form>
+
+            <p class="da-muted">
+              Need help? Email
+              <a href="mailto:info@itretina.com">info@itretina.com</a>.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+
+    <div
+      id="daBusy"
+      class="da-busy"
+      role="alertdialog"
+      aria-modal="true"
+      aria-live="assertive"
+      aria-labelledby="daBusyTitle"
+      hidden
+    >
+      <div class="da-busy-card">
+        <div class="da-busy-ring" aria-hidden="true"></div>
+        <p id="daBusyTitle" class="da-busy-title">Deleting your account</p>
+        <p class="da-busy-text">Please wait and do not close this page.</p>
+      </div>
+    </div>
 
     <dialog id="daDialog" class="da-dialog" aria-labelledby="daDialogTitle">
       <h2 id="daDialogTitle">Delete this account permanently?</h2>
@@ -374,8 +473,10 @@
         <li><span>every child profile</span></li>
         <li><span>all learning progress</span></li>
         <li><span>your consent records</span></li>
+        <li><span>any subscription: it ends immediately</span></li>
       </ul>
-      <p><strong>This cannot be undone.</strong></p>
+      <p><strong>This cannot be undone.</strong> Any subscription ends now.</p>
+      <p><strong>Refunds are handled by Google Play, not by us.</strong></p>
       <div class="da-dialog-actions">
         <button type="button" id="daCancel" class="btn btn-secondary" autofocus>
           Cancel
